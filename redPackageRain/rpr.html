@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>就要发发发发</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./game.css">
+</head>
+<body>
+    <div class="pk boom"></div>
+    <div class="bg">
+        <canvas width="100%" height="100%" class="flare flare1"></canvas>
+        <canvas width="100%" height="100%" class="flare flare2"></canvas>
+        <canvas width="100%" height="100%" class="flare flare3"></canvas>
+    </div>
+    <div class="result">
+        <p class="reult-title">活动结束</p>
+        <div class="result_success">
+            <p class="tips">恭喜您抢到</p>
+            <p id="giftsRsult" class="giftsRsult"></p>
+            <div class="result-button">
+                <span id="btn1">查看奖品</span>
+                <span id="btn2">先去逛逛</span>
+            </div>
+        </div>
+        <div class="result_fail">
+            <p class="tips">很遗憾,您没有抽到奖品哦~</p>
+            <div class="result-button" id="btn3">
+                先去逛逛
+            </div>
+        </div>
+    </div>
+    <div class="mask">
+        <span id="clockTime"></span>
+    </div>
+    <div class="pkcontainer"></div>
+    <script type="text/javascript" src="./jq.js"></script>
+    <script type="text/javascript" src="./jquery.easing.1.3.min.js"></script>
+    <script type="text/javascript" src="./snow.js"></script>
+    <script type="text/javascript" src="./pk.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    #vsbox {
+        width: 620px;
+        height: 830px;
+        background-color: #f53f8f;
+        margin: 0 auto;
+        position: relative;
+    }
+.project{
+    /* -webkit-transition: all 1s cubic-bezier(0.68,-.55,.265,1.55);
+    -moz-transition: all 1s cubic-bezier(0.68,-.55,.265,1.55);
+    -o-transition: all 1s cubic-bezier(0.68,-.55,.265,1.55);
+    -ms-transition: all 1s cubic-bezier(0.68,-.55,.265,1.55); */
+    transition: all 5s;
+}
+.project .back, .project .front {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+    .project {
+        position: absolute;
+        width: 180px;
+        height: 250px;
+        margin: 20px;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        float: left;
+    }
+    .project:hover {
+        transform: rotateY(180deg);
+    }
+    .project > div {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 180px;
+        height: 250px;
+        padding: 0 16px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .back {
+        transform: rotateY(180deg);
+        background-color: #ff8;
+    }
+    .front {
+        background-color: #af8;
+    }
+    .ani0 {
+        left: 0;
+    }
+    .ani1 {
+        left: 200px;
+    }
+    .ani2 {
+        left: 400px;
+    }
+    .ani3 {
+        top: 270px;
+    }
+    .ani4 {
+        top: 270px;
+        left: 200px;
+    }
+    .ani5 {
+        top: 270px;
+        left: 400px;
+    }
+    .ani6 {
+        top: 540px;
+    }
+    .ani7 {
+        top: 540px;
+        left: 200px;
+    }
+    .ani8 {
+        top: 540px;
+        left: 400px;
+    }
+</style>
+<body>
+    <div id="vsbox">
+        <div class="project ani0">
+            <div class="back">00</div>
+            <div class="front">0</div>
+        </div>
+        <div class="project ani1">
+            <div class="back"></div>
+            <div class="front">1</div>
+        </div>
+        <div class="project ani2">
+                <div class="back"></div>
+                <div class="front">2</div>
+            </div>
+        <div class="project ani3">
+            <div class="back"></div>
+            <div class="front">3</div>
+        </div>
+        <div class="project ani4">
+            <div class="back"></div>
+            <div class="front">4</div>
+        </div>
+        <div class="project ani5">
+            <div class="back"></div>
+            <div class="front">5</div>
+        </div>
+        <div class="project ani6">
+            <div class="back"></div>
+            <div class="front">6</div>
+        </div>
+        <div class="project ani7">
+            <div class="back"></div>
+            <div class="front">7</div>
+        </div>
+        <div class="project ani8">
+            <div class="back"></div>
+            <div class="front">8</div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="./jquery.js"></script>
+<script type="text/javascript">
+  $(function(){
+    $('.project').click(function(){
+        $('.project').removeClass('ani'+ 8)
+    })
+  })
+
+
+  function addMove(){
+    $('.project').each(function(index,item){
+      setTimeout(function(){
+       $(item).addClass('ani'+ index);
+     },index*300);
+    })
+  }
+
+  function subMove(){
+    $('.project').each(function(index,item){
+       $(item).removeClass('ani'+ index);
+    })
+  }
+</script>

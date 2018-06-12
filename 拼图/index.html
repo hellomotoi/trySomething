@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>试一试拼图游戏</title>
+  <style type="text/css">
+    * {
+      margin: 0px;
+      padding: 0px;
+      border: 0px;
+    }
+
+    #box {
+      width: 300px;
+      height: 300px;
+      position: relative;
+      border: 1px solid #ccc;
+    }
+
+    .pic {
+      width: 528px;
+      margin: 16px auto 0px;
+    }
+
+    .pic>div {
+      display: inline-block;
+    }
+
+    #box img {
+      float: left;
+      width: 100px;
+      height: 100px;
+    }
+
+    #box .pj,
+    #box .p2,
+    #box .p3,
+    #box .p4,
+    #box .p5,
+    #box .p6,
+    #box .p7,
+    #box .p8,
+    #box .p9 {
+      position: absolute;
+    }
+
+    #box .pj,
+    #box .p2,
+    #box .p3 {
+      top: 0px;
+    }
+
+    #box .p4,
+    #box .p5,
+    #box .p6 {
+      top: 100px;
+    }
+
+    #box .p7,
+    #box .p8,
+    #box .p9 {
+      top: 200px;
+    }
+
+    #box .pj,
+    #box .p4,
+    #box .p7 {
+      left: 0px;
+    }
+
+    #box .p2,
+    #box .p5,
+    #box .p8 {
+      left: 100px;
+    }
+
+    #box .p3,
+    #box .p6,
+    #box .p9 {
+      left: 200px;
+    }
+
+    #button {
+      padding: 6px;
+      color: #fff;
+      background: #574a4a;
+      border-radius: 4px;
+      margin: 0 auto;
+      display: block
+    }
+
+    #output {
+      width: 170px;
+      height: 170px;
+      margin-left: 50px;
+    }
+
+    #output img {
+      height: 170px;
+      width: 170px;
+      float: right;
+      border: 1px solid #ccc;
+    }
+
+    .time,
+    .bu {
+      width: 300px;
+      height: 30px;
+      clear: both;
+      text-align: center;
+      line-height: 30px;
+      border: 1px solid #574a4a;
+      margin: 10px auto;
+      border-radius: 4px;
+    }
+
+
+  
+    /* book */
+    #all {
+      width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #page-flip {
+      position: absolute;
+      padding: 40px 40px 40px 340px;
+      width: 300px;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    #r1 {
+      position: absolute;
+      z-index: 2;
+      -webkit-transform-origin: 1315px 500px;
+      -webkit-transform: translate(-1030px, -500px) rotate(-32deg);
+      -webkit-transition-property: -webkit-transform, -webkit-transform-origin;
+      -webkit-transition-duration: 10s;
+    }
+
+    #p1 {
+      width: 1285px;
+      height: 1388px;
+      overflow: hidden;
+    }
+
+    #p1>div {
+      -webkit-transform-origin: 285px 0;
+      -webkit-transform: translate(1030px, 500px) rotate(32deg);
+      -webkit-transition-property: -webkit-transform, -webkit-transform-origin;
+      -webkit-transition-duration: 10s;
+      width: 285px;
+      height: 388px;
+      background-image: url(http://www.jq22.com/img/cs/300x500-1.png);
+    }
+
+    #p1>div>div {
+      width: 10px;
+      height: 388px;
+      background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .25)), to(rgba(0, 0, 0, 0)));
+    }
+
+    #p2>div {
+      width: 285px;
+      height: 388px;
+      -webkit-box-shadow: 0 0 11px rgba(0, 0, 0, .5);
+      position: absolute;
+      z-index: 1;
+      background-image: url(http://www.jq22.com/img/cs/300x500-2.png);
+    }
+
+    #r3 {
+      -webkit-transform-origin: 1315px 500px;
+      -webkit-transform: translate(-1030px, -500px) rotate(-32deg);
+      -webkit-transition-property: -webkit-transform, -webkit-transform-origin;
+      -webkit-transition-duration: 10s;
+      position: absolute;
+      z-index: 2;
+    }
+
+    #s3 {
+      -webkit-transform-origin: 70px 500px;
+      -webkit-transform: translate(215px, -500px) rotate(-32deg) translate(40px, 0);
+      -webkit-transition-property: -webkit-transform, -webkit-transform-origin;
+      -webkit-transition-duration: 10s;
+      position: absolute;
+      z-index: 1;
+    }
+
+    #page-flip:hover #s3 {
+      -webkit-transform-origin:325px 500px;
+      -webkit-transform:translate(-40px,-500px) rotate(0deg) translate(40px,0);
+      width:11px;
+    }
+
+    #sp3 {
+      width: 25px;
+      height: 1000px;
+      background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .25)), to(rgba(0, 0, 0, 0)));
+      -webkit-transition-property: width;
+      -webkit-transition-duration: 10s;
+      overflow: hidden;
+    }
+
+    .s {
+      width: 285px;
+      height: 388px;
+      position: absolute;
+      overflow: hidden;
+      z-index: 3;
+    }
+
+    #s2 {
+      -webkit-transform-origin: 45px 500px;
+      -webkit-transform: translate(240px, -500px) rotate(-32deg);
+      -webkit-transition-property: -webkit-transform, -webkit-transform-origin;
+      -webkit-transition-duration: 10s;
+      position: absolute;
+    }
+
+    #sp2 {
+      width: 15px;
+      height: 1000px;
+      background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, .18)), to(rgba(0, 0, 0, 0)));
+      overflow: hidden;
+    }
+
+    #s4 {
+      opacity: 1;
+      -webkit-transition-duration: 10s;
+    }
+
+    #page-flip:hover #s4 {
+      opacity:0;
+    }
+    #page-flip:hover #s2 {
+      -webkit-transform-origin:300px 500px;
+      -webkit-transform:translate(-15px,-500px) rotate(0deg);
+    }
+
+    #p3 {
+      width: 1285px;
+      height: 1388px;
+      overflow: hidden;
+    }
+
+    #p3>div {
+      -webkit-transform-origin: 0 0;
+      -webkit-transform: translate(1255px, 500px) rotate(-32deg);
+      -webkit-transition-property: -webkit-transform, -webkit-transform-origin;
+      -webkit-transition-duration: 10s;
+      -webkit-box-shadow: 0 0 11px rgba(0, 0, 0, .5);
+      width: 285px;
+      height: 388px;
+      background-image: url(http://www.jq22.com/img/cs/300x500-3.png);
+      overflow: hidden;
+    }
+
+    #p3>div>div {
+      width: 9px;
+      height: 500px;
+      float: right;
+      background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, .20)));
+    }
+
+    #page-flip:hover #r1 {
+      -webkit-transform-origin:1570px 500px;
+      -webkit-transform:translate(-1285px,-500px) rotate(0deg);
+    }
+    #page-flip:hover #p1 > div {
+      -webkit-transform-origin:285px 0;
+      -webkit-transform:translate(1285px,500px) rotate(0deg);
+    }
+    #page-flip:hover #r3 {
+      -webkit-transform-origin:1570px 500px;
+      -webkit-transform:translate(-1285px,-500px) rotate(0deg);
+    }
+    #page-flip:hover #p3 > div {
+      -webkit-transform-origin:0 0;
+      -webkit-transform:translate(1000px,500px) rotate(0deg);
+    }
+
+    .circle {
+
+    }
+    .circle svg {
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+    }
+    .circle circle:nth-child(1) {
+      stroke-opacity: 0.3;
+      stroke: #df6c4f;
+      fill: none;
+      stroke-width: 3;
+    }
+    .circle circle:nth-child(2) {
+      stroke: #df6c4f;
+      fill: none;
+      stroke-width: 3;
+      stroke-dasharray: 238.76104;
+      stroke-dashoffset: 238.76104;
+    }
+    @keyframes donut-show-0 {
+      100% {
+        stroke-dashoffset: 57.3027;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="circle">
+      <svg width="84" height="84">
+          <circle r="38" cy="41" cx="41"></circle>
+          <circle r="38" cy="41" cx="41" stroke-linejoin="round" stroke-linecap="round" class="circle-progress" style="animation: donut-show-0 900ms ease forwards;"></circle>
+      </svg>
+  </div>
+  <div class="percent">
+      <span class="int">7</span><span class="dec">.62</span>
+  </div>
+
+  <div class="pic">
+    <div id="box">
+      <img class="pj" src="images/201__.png">
+      <img class="p2" src="images/202.png">
+      <img class="p3" src="images/203.png">
+      <img class="p4" src="images/204.png">
+      <img class="p5" src="images/205.png">
+      <img class="p6" src="images/206.png">
+      <img class="p7" src="images/207.png">
+      <img class="p8" src="images/208.png">
+      <img class="p9" src="images/209.png"> </div>
+    <div id="output">
+      <img alt="" src="images/2.jpg"> </div>
+  </div>
+  <!-- 提示 -->
+  <!-- <div class="time">
+    <p>英雄，您已作战
+      <span>0</span>秒</p>
+  </div>
+  <div class="bu">
+    <p>英雄，您已经走了
+      <span>0</span>步</p>
+  </div> -->
+  <input type="button" id="button" value="开始新游戏">
+
+  <div id="all">
+    <div id="page-flip">
+      <div id="r1">
+        <div id="p1">
+          <div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div id="p2">
+        <div></div>
+      </div>
+      <div id="r3">
+        <div id="p3">
+          <div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div class="s">
+        <div id="s3">
+          <div id="sp3"></div>
+        </div>
+      </div>
+      <div class="s" id="s4">
+        <div id="s2">
+          <div id="sp2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./jquery-1.7.1.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      var tt = null;
+      // 游戏完成时间和步数
+      var times = 0;
+      var time = 0;
+
+      // 打乱之前的图片数组准备
+      var src = Array();
+      src.push("images/201.png");
+      src.push("images/202.png");
+      src.push("images/203.png");
+      src.push("images/204.png");
+      src.push("images/205.png");
+      src.push("images/206.png");
+      src.push("images/207.png");
+      src.push("images/208.png");
+      src.push("images/209.png");
+      // 按钮事件。。。开始游戏
+
+      $('#button').click(function () {
+        // clearInterval(tt)
+        // // 时间归0
+        // time = 0;
+        // times = 0;
+        // // 来来来设置时间；了
+        // tt = setInterval(shij, 1000)
+        // function shij() {
+        //   time++;
+        //   $(".time>p>span").text(time)
+        // }
+
+        // 乱序排列
+        var srcUsing = new Array();
+        for (var p = 0; p < src.length; p++) {
+          srcUsing[p] = src[p];
+        }
+        console.log('srcUsing', srcUsing)
+        var newArry = new Array();
+        for (var i = 0; i < $("#box img").length; i++) {
+          newArry.push(srcUsing.splice(Math.floor(Math.random() * srcUsing.length), 1));
+        }
+        for (var j = 0; j < newArry.length; j++) {
+          $("#box img").eq(j).attr("src", String(newArry[j]));
+        }
+        console.log('newArry', newArry)
+
+        // 设置一个空白图片，
+        var Arrps = document.getElementById("box").getElementsByTagName("img");
+        for (var i = 0; i < Arrps.length; i++) {
+          Arrps[i].onclick = function () {
+            // if (this.getAttribute("src") == "images/201.png");
+            changeP(this, Arrps);
+          };
+        }
+      })
+
+
+      // 判断位置
+      function changeP(ob, Arrps) {
+        var Ni = 0;
+        var Nj = 0;
+
+        for (var i = 0; i < Arrps.length; i++) {
+          if (Arrps[i] == ob) {
+            Ni = i;
+          }
+
+          if (Arrps[i].getAttribute("src") == "images/201.png") {
+            Nj = i;
+          }
+
+        }
+        console.log(Ni, Nj)
+
+        // 绝对值
+        if (Math.abs(Ni - Nj) == 3) {
+          var temperOb = ob.getAttribute("src");
+          ob.setAttribute("src", "images/201.png");
+          Arrps[Nj].setAttribute("src", temperOb);
+          times++;
+          ifright();
+
+        } else if ((Ni - Nj) == 1 && (Ni % 3) != 0) {
+          var temperOb = ob.getAttribute("src");
+          ob.setAttribute("src", "images/201.png");
+          Arrps[Nj].setAttribute("src", temperOb);
+          times++;
+          ifright();
+
+        } else if ((Ni - Nj) == -1 && (Ni % 3) != 2) {
+          var temperOb = ob.getAttribute("src");
+          ob.setAttribute("src", "images/201.png");
+          Arrps[Nj].setAttribute("src", temperOb);
+          times++;
+          ifright();
+        }
+
+        // $(".bu>p>span").text(times)
+      }
+
+      function ifright() {
+        var ps = document.getElementById("box");
+        var Arrps = ps.getElementsByTagName("img");
+        for (var i = 0; i < src.length; i++) {
+          if (src[i] != Arrps[i].getAttribute("src")) return;
+        }
+        // alert("恭喜，你成功了。。" + "\n" + "用了" + times + "步")
+      }
+    })
+
+  </script>
+</body>
+
+</html>

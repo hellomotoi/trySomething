@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>测试</title>
+</head>
+<body>
+	<iframe src="http://test.weiyangpuhui.com/activity/2018/son.html" id="fr"></iframe>
+	<div class="container" id="c">
+		
+	</div>
+	<a href="http://test.weiyangpuhui.com/activity/2018/son.html" target="_blank">链接</a>
+	<button id="btn">同源发送数据</button>
+	<script type="text/javascript">
+		var fr = document.getElementById('fr');
+		var btn = document.getElementById('btn');
+
+		btn.addEventListener('click', function() {
+			fr.contentWindow.postMessage('hello','http://test.weiyangpuhui.com');
+			window.localStorage.setItem('key','666');
+		})
+
+
+
+
+		setInterval(function() {
+			var v = window.localStorage.getItem('key');
+			if( v == '666') {
+				c.innerHTML = 'hahahahhahah';
+			}
+		},2000)
+
+	</script>
+</body>
+</html>

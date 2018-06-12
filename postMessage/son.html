@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>测试666</title>
+</head>
+<style type="text/css">
+	#c {
+		height: 2000px;
+	}
+</style>
+<body>
+	<div class="f">
+		<div class="s"></div>
+	</div>
+	<div class="container" id="c">
+		
+	</div>
+	<a href="#c" id="atag" data-src='999' stag='777'>77</a>
+	<input type="text" name="sss" id="puttag">
+	<script type="text/javascript">
+		var c = document.getElementById('c');
+		
+		window.addEventListener('message', receiveMessage, false);
+
+		function receiveMessage(event) {
+			var origin = event.origin || event.originalEvent.origin;
+
+			console.log(event);
+
+			c.innerHTML = event.data;
+
+		}
+
+
+		function bibi() {
+			var a = 666,
+				b = 999;
+			return {
+				set: function(s) {
+					s = s || 0;
+					a = a + s;
+					console.log(a);
+				},
+				get: function() {
+					console.log(a,b);
+				}
+			}
+		}
+
+		// console.log(a)
+
+		var Things = [];
+		for (var i = 0; i < Things.length; i++) {
+
+		}
+		console.log(i)
+	</script>
+</body>
+</html>

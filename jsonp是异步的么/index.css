@@ -1,0 +1,417 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+.banner {
+  height: 3.72rem;
+  background: url(../images/banner.jpg) no-repeat center;
+  background-size: 100%;
+  position: relative;
+}
+.banner .hudie {
+  width: 0.52rem;
+  height: 0.44rem;
+  background: url(../images/hudie.png) no-repeat center;
+  background-size: 100%;
+  position: absolute;
+  top: 2.06rem;
+  left: 1.18rem;
+  animation: upDown 3s ease infinite;
+  -webkit-animation: upDown 3s ease infinite;
+}
+.box1 {
+  height: 2.36rem;
+  background: url(../images/box1.jpg) no-repeat center;
+  background-size: 100%;
+  margin-top: -1px;
+}
+.box1 ul {
+  padding: 0.2rem 1.0rem 0 1.3rem;
+  overflow: hidden;
+}
+.box1 ul li {
+  width: 50%;
+  float: left;
+}
+.box1 ul li p {
+  text-align: center;
+}
+.box1 ul li p.pic img {
+  width: 0.82rem;
+  height: 0.74rem;
+  display: block;
+  margin: 0 auto;
+}
+.box1 ul li p.info {
+  font-size: 0.24rem;
+  color: #124A56;
+}
+.box1 ul li p.info b {
+  color: #134B58;
+  margin-left: 0.2rem;
+}
+.box1 ul li p.info a {
+  color: #134B58;
+  margin-left: 0.2rem;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.box1 ul li p.info .noLogin {
+  display: none;
+}
+.box1 ul li p.info .isLogin {
+  display: none;
+}
+.box1 ul li p.btn {
+  padding-top: 0.26rem;
+}
+.box1 ul li p.btn span {
+  width: 1.7rem;
+  height: 0.5rem;
+  display: block;
+  margin: 0 auto;
+  background: url(../images/btn.png) no-repeat center;
+  background-size: 100%;
+  text-align: center;
+  line-height: 0.5rem;
+  color: #fff;
+  font-size: 0.24rem;
+}
+.box2 {
+  height: 8.97rem;
+  background: url(../images/box2.jpg) no-repeat center;
+  background-size: 100%;
+  margin-top: -1px;
+}
+.box2 .main {
+  width: 7.08rem;
+  height: 8.54rem;
+  margin: 0 auto;
+}
+.box2 .main .tab {
+  width: 7.08rem;
+  height: 0.6rem;
+}
+.box2 .main .tab li {
+  width: 2.36rem;
+  height: 0.6rem;
+  float: left;
+  background: url(../images/tab_normal.png) no-repeat bottom;
+  background-size: 100%;
+  font-size: 0.24rem;
+  color: #fff;
+  text-align: center;
+  line-height: 0.7rem;
+}
+.box2 .main .tab li.active {
+  background: url(../images/tab_press.png) no-repeat bottom;
+  background-size: 100%;
+  font-size: 0.24rem;
+  line-height: 0.6rem;
+}
+.box2 .main .content {
+  height: 7.94rem;
+  background: #37A87C;
+  border-radius: 0 0 0.2rem 0.2rem;
+}
+.box2 .main .content .giftList {
+  height: 7.88rem;
+  background: #fff;
+  border-radius: 0 0 0.18rem 0.18rem;
+}
+.box2 .main .content .giftList .listScroll {
+  height: 100%;
+  padding-top: 0.3rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+.box2 .main .content .giftList .listScroll .gistList {
+  display: none;
+}
+.box2 .main .content .giftList .listScroll ul li {
+  width: 3rem;
+  margin-left: 0.5rem;
+  float: left;
+  margin-bottom: 0.5rem;
+}
+.box2 .main .content .giftList .listScroll ul li p {
+  text-align: center;
+}
+.box2 .main .content .giftList .listScroll ul li p.pic {
+  height: 2.18rem;
+  line-height: 2.18rem;
+}
+.box2 .main .content .giftList .listScroll ul li p.pic img {
+  max-width: 2.54rem;
+  max-height: 2.18rem;
+  vertical-align: middle;
+}
+.box2 .main .content .giftList .listScroll ul li p.name {
+  font-size: 0.24rem;
+  color: #E95E12;
+  font-weight: 600;
+  padding-top: 0.16rem;
+}
+.box2 .main .content .giftList .listScroll ul li p.txt {
+  font-size: 0.2rem;
+  color: #333;
+  padding: 0.12rem 0 0.1rem;
+}
+.box2 .main .content .giftList .listScroll ul li p.btn span {
+  width: 1.7rem;
+  height: 0.5rem;
+  display: block;
+  margin: 0 auto;
+  background: url(../images/btn.png) no-repeat center;
+  background-size: 100%;
+  text-align: center;
+  line-height: 0.5rem;
+  color: #fff;
+  font-size: 0.24rem;
+}
+.box3 {
+  width: 100%;
+  height: 8.11rem;
+  background: url(../images/box3.jpg) no-repeat center;
+  background-size: 100%;
+  margin-top: -1px;
+}
+.box3 #lottery {
+  width: 100%;
+  height: 7.97rem;
+  background: url(../images/turntable.png) no-repeat center;
+  background-size: 100%;
+  position: relative;
+}
+.box3 #lottery .rotate-bg {
+  width: 4.4rem;
+  height: 4.4rem;
+  background: url(../images/rotating.png) no-repeat center;
+  background-size: 100%;
+  position: absolute;
+  left: 1.54rem;
+  top: 1.9rem;
+}
+.box3 #lottery .rotate-bg .lottery-star {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -1rem;
+  margin-top: -1rem;
+}
+.box3 #lottery .rotate-bg .lottery-star .btn {
+  width: 2rem;
+  height: 2rem;
+}
+.box3 #lottery .rotate-bg .lottery-star .icon {
+  width: 0.7rem;
+  height: 0.75rem;
+  position: absolute;
+  left: 0.64rem;
+  top: 0.6rem;
+}
+.box3 #lottery .rotate-bg #deng {
+  width: 5.34rem;
+  height: 5.34rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -2.67rem;
+  margin-top: -2.66rem;
+}
+.box3 #lottery .rotate-bg .deng1 {
+  background: url(../images/point1.png) no-repeat center;
+  background-size: 100%;
+}
+.box3 #lottery .rotate-bg .deng2 {
+  background: url(../images/point2.png) no-repeat center;
+  background-size: 100%;
+}
+.box4 {
+  height: 12.83rem;
+  background: url(../images/box4.jpg) no-repeat center;
+  background-size: 100%;
+  margin-top: -1px;
+}
+.box4 .rule {
+  width: 7.08rem;
+  height: 10rem;
+  box-sizing: border-box;
+  padding-top: 1.7rem;
+  margin: 0 auto;
+  background: url(../images/rule.png) no-repeat center;
+  background-size: 100%;
+}
+.box4 .rule p {
+  font-size: 0.24rem;
+  color: #0B4656;
+  line-height: 0.48rem;
+  padding: 0 0.34rem;
+  text-align: justify;
+}
+#hide_wrap {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  filter: alpha(opacity=60);
+  -moz-opacity: 0.6;
+  -khtml-opacity: 0.6;
+  opacity: 0.6;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  display: none;
+}
+#ruleBox1 {
+  height: 6rem;
+  margin-top: -2.9rem;
+}
+#ruleBox2 {
+  height: 5.3rem;
+  margin-top: -2.6rem;
+}
+.ruleBox {
+  width: 6.9rem;
+  background: #fff;
+  border-radius: 0.2rem;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -3.45rem;
+  z-index: 101;
+  box-sizing: border-box;
+  padding: 0.45rem;
+  display: none;
+}
+.ruleBox .head {
+  height: 0.7rem;
+  line-height: 0.7rem;
+  font-size: 0.24rem;
+  color: #124B5A;
+  text-align: center;
+  margin-bottom: 0.44rem;
+  font-weight: 600;
+}
+.ruleBox .head img {
+  width: 0.76rem;
+  height: 0.7rem;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+.ruleBox table {
+  width: 6rem;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.24rem;
+  border-collapse: collapse;
+}
+.ruleBox table th {
+  height: 0.7rem;
+  background: #5DBA96;
+  color: #fff;
+  border: 1px solid #37A87C;
+}
+.ruleBox table td {
+  height: 0.7rem;
+  color: #37A87C;
+  border: 1px solid #37A87C;
+}
+.ruleBox .btn {
+  width: 3rem;
+  height: 0.6rem;
+  background: url(../images/btn_long.png) no-repeat center;
+  background-size: 100%;
+  text-align: center;
+  line-height: 0.6rem;
+  font-size: 0.24rem;
+  color: #fff;
+  font-weight: 600;
+  margin: 0.6rem auto 0;
+}
+.hintBox {
+  width: 4.6rem;
+  height: 5.2rem;
+  background: url(../images/hintBox_bg.png) no-repeat center;
+  background-size: 100%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -2.3rem;
+  margin-top: -2.6rem;
+  z-index: 101;
+  display: none;
+}
+.hintBox .close {
+  width: 0.74rem;
+  height: 0.74rem;
+  background: url(../images/close.png) no-repeat center;
+  background-size: 100%;
+  position: absolute;
+  left: 50%;
+  bottom: -1.2rem;
+  margin-left: -0.37rem;
+}
+.hintBox p {
+  text-align: center;
+  color: #144C57;
+}
+.hintBox p.txt {
+  font-size: 0.3rem;
+  font-weight: 600;
+  padding: 1.7rem 0.3rem 0;
+  line-height: 0.6rem;
+  text-align: center;
+}
+.hintBox p.info {
+  font-size: 0.24rem;
+  color: #144C57;
+  line-height: 0.3rem;
+  text-align: center;
+  padding: 0.1rem 0.4rem 0;
+}
+.hintBox p.btn {
+  width: 100%;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  position: absolute;
+  bottom: 0.97rem;
+  font-size: 0.24rem;
+  color: #fff;
+  font-weight: 600;
+}
+.hintBox p.btn span {
+  width: 1.68rem;
+  height: 0.6rem;
+  display: inline-block;
+  background: url(../images/btn2.png) no-repeat center;
+  background-size: 100%;
+  margin: 0 0.2rem;
+}
+.hintBox p.btn a,
+.hintBox p.btn b {
+  width: 2.6rem;
+  height: 0.6rem;
+  background: url(../images/btn_long.png) no-repeat center;
+  background-size: 100%;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+}
+@keyframes upDown {
+  0% {
+    top: 2.06rem;
+  }
+  50% {
+    top: 1.8rem;
+  }
+  100% {
+    top: 2.06rem;
+  }
+}
+/*# sourceMappingURL=index.css.map */

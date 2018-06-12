@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>测试</title>
+</head>
+<script type="text/javascript" src="b.js"></script>
+<script type="text/javascript">
+		alert('b')
+	</script>
+<body id="bs">
+	<script type="text/javascript">
+		alert('c')
+		function demo(a) {
+			alert(a);
+		}
+		var b = document.querySelector('head');
+		var s = document.createElement('script');
+		s.src = './a.js';
+		b.appendChild(s);
+		for (var i = 50000 - 1; i >= 0; i--) {
+			console.log(i)
+		}
+		alert('d');
+	</script>
+</body>
+</html>
